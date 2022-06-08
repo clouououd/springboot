@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>로그인</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h2>로그인</h2>
+    <form action="/ex/userlogin" method="post">
+        <input type="text" name="id" id="id">
+        <input type="password"  name="pw" id="pw">
+        <input type="button" onclick="loginCheck()">
+    </form>
+</body>
+<script>
+    let id = document.getElementById("id").value;
+    let pw = document.getElementById("pw").value;
+
+    const loginCheck = () =>{
+        if(id==""){
+            alert("아이디를 입력하세요.");
+        }
+        if(pw==""){
+            alert("비밀번호를 입력하세요.");
+        }
+        else{
+            $("form").submit();
+        }
+    }
+
+</script>
+</html>
